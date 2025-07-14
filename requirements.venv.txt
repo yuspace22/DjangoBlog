@@ -1,0 +1,4 @@
+beautifulsoup4==4.13.4
+Django==4.2
+Markdown==3.4.4
+pandas==2.0.1
