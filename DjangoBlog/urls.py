@@ -22,6 +22,7 @@ from posts.views import about
 from posts.views import index_use_template
 from posts.views import showPost
 from posts.views import login
+from line_bot.views import callback
 # 匯入 view fn 對應的來源
 
 urlpatterns = [
@@ -31,5 +32,6 @@ urlpatterns = [
     path("about/", about),
     path("post/<slug:slug>", showPost),
     #path("路徑/<資料的型態:變數名稱>", view function)
-    path("login", login)
+    path("login", login),
+    path('line/', callback),
 ]
