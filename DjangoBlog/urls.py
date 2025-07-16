@@ -23,6 +23,8 @@ from posts.views import index_use_template
 from posts.views import showPost
 from posts.views import login
 from line_bot.views import callback
+from django.conf import settings
+from django.conf.urls.static import static
 # 匯入 view fn 對應的來源
 
 urlpatterns = [
@@ -34,4 +36,7 @@ urlpatterns = [
     #path("路徑/<資料的型態:變數名稱>", view function)
     path("login", login),
     path('line/', callback),
+    
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

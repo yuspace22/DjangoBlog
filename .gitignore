@@ -139,3 +139,7 @@ GitHub.sublime-settings
 
 public/*
 !public/.gitkeep
+
+public/uploads/*
+!public/uploads
+!public/uploads/.gitkeep
