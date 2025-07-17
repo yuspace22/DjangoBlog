@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
-import os
-import sys
+import os   # 設置環境變數
+import sys  # 用來取得命令列引數
 
 
 def main():
