@@ -22,6 +22,7 @@ from posts.views import about
 from posts.views import index_use_template
 from posts.views import showPost
 from posts.views import login
+from posts.views import showArticleList
 from line_bot.views import callback
 from django.conf import settings
 from django.conf.urls.static import static
@@ -32,11 +33,11 @@ urlpatterns = [
     # path("", index),
     path("", index_use_template),
     path("about/", about),
-    path("post/<slug:slug>", showPost),
+    path("post/<str:slug>", showPost),
     #path("路徑/<資料的型態:變數名稱>", view function)
     path("login", login),
     path('line/', callback),
-    
+    path('api/posts/', showArticleList),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

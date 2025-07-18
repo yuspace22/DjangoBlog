@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from posts.models import Post
 from datetime import datetime
-
+from django.http import JsonResponse
 
 # Create your views here.
 def index(resquest): 
@@ -44,3 +44,9 @@ def showPost(requests, slug):
 
 def login(requsets):
     return render(requsets, "pages/login.html")
+
+
+def showArticleList(requests):
+    article = Post.objects.all().values()
+    article = list(article)
+    return JsonResponse(article, safe=False)
